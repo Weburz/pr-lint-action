@@ -1,0 +1,16 @@
+name: QA Checks
+
+on:
+  push:
+
+jobs:
+  qa-checks:
+    name: QA Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3.6.0
+
+      # TODO: Replace the following lines of code with what Code Quality Checks tools to be used
+      - name: Echo "Hello World!" Message
+        run: echo "Hello World!"
