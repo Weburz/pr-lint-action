@@ -3,7 +3,7 @@ name: QA Checks
 on:
   push:
     branches-ignore:
-      - 'dependabot/**'
+      - "dependabot/**"
 
 jobs:
   qa-checks:
@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v3.8.1
         with:
           node-version: 18
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install the Dependencies
         run: npm ci --ignore-scripts
