@@ -1,6 +1,5 @@
 {
   "version": "0.0.1",
-  "type": "module",
   "scripts": {
     "bundle": "npm run format:write && npm run package",
     "format:write": "prettier --write **/*.ts",
