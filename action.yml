@@ -1,0 +1,9 @@
+name: PR Linter
+description:
+  A GitHub Action which lints PR titles using the CommitLint specification
+runs:
+  using: "nodejs20"
+  main: "index.js"
+branding:
+  icon: "activity"
+  color: "yellow"
