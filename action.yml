@@ -1,8 +1,8 @@
-name: PR Linter
+name: Pull Request Linter
 description:
   A GitHub Action which lints PR titles using the CommitLint specification
 runs:
-  using: "nodejs20"
+  using: "node20"
   main: "index.js"
 branding:
   icon: "activity"
