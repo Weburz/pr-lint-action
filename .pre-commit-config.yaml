@@ -46,5 +46,7 @@ repos:
         files: \.[jt]sx?$
         types: [file]
         additional_dependencies:
+          - eslint@8
           - '@typescript-eslint/eslint-plugin'
           - '@typescript-eslint/parser'
+          - eslint-config-prettier
