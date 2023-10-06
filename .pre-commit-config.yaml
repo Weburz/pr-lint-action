@@ -21,4 +21,28 @@ repos:
       - id: commitlint
         stages:
           - commit-msg
-        additional_dependencies: ["@commitlint/config-conventional"]
+        additional_dependencies: ['@commitlint/config-conventional']
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.0.3
+    hooks:
+      - id: prettier
+        name: check for non-standard formatting concerns
+        stages:
+          - pre-commit
+        additional_dependencies:
+          - prettier@3
+          - '@trivago/prettier-plugin-sort-imports'
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v8.50.0
+    hooks:
+      - id: eslint
+        name: check for linting errors and warnings
+        stages:
+          - pre-commit
+        files: \.[jt]sx?$
+        types: [file]
+        additional_dependencies:
+          - '@typescript-eslint/eslint-plugin'
+          - '@typescript-eslint/parser'
