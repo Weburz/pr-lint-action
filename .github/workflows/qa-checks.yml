@@ -2,15 +2,27 @@ name: QA Checks
 
 on:
   push:
+    branches-ignore:
+      - 'dependabot/**'
 
 jobs:
   qa-checks:
-    name: QA Checks
+    name: Run QA Checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4.1.0
 
-      # TODO: Replace the following lines of code with what Code Quality Checks tools to be used
-      - name: Echo "Hello World!" Message
-        run: echo "Hello World!"
+      - name: Setup Node.js for the Environment
+        uses: actions/setup-node@v3.8.1
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install the Dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Run Linting Checks
+        run: |
+          npm run lint
+          npm run format:check
