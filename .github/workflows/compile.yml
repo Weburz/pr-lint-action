@@ -32,4 +32,3 @@ jobs:
         with:
           commit_message: "chore: compile the binary using `ncc`"
           commit_options: "--no-verify --signoff"
-          file_pattern: "./dist/**/*"
