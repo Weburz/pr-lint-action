@@ -1,1 +1,6 @@
-console.log("Hello World!")
+/**
+ * The entrypoint of the script
+ */
+import run from "./main";
+
+run();
