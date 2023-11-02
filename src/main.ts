@@ -1,23 +1,13 @@
-import * as core from "@actions/core";
 import * as github from "@actions/github";
 
 async function run() {
-  const token = core.getInput("GITHUB_TOKEN");
-  const octokit = github.getOctokit(token);
+  // Check if the workflow was triggered by a Pull Request event
+  if (github.context.eventName === "pull_request") {
+    const pullRequestTitle = github.context.payload.pull_request?.title;
 
-  const { data: pullRequest } = await octokit.rest.pulls.get({
-    owner: "Weburz",
-    repo: "pr-lint",
-    pull_number: 1,
-    mediaType: {
-      format: "diff"
-    }
-  });
-
-  try {
-    console.log(pullRequest);
-  } catch (error) {
-    if (error instanceof Error) core.setFailed(error.message);
+    console.log(`Pull Request Title: ${pullRequestTitle}`);
+  } else {
+    console.log("This workflow was not triggered by a Pull Request event.");
   }
 }
 
