@@ -26,18 +26,11 @@
     "typescript": "^5.2.2"
   },
   "prettier": {
-    "printWidth": 80,
-    "tabWidth": 2,
-    "useTabs": false,
-    "semi": false,
-    "quoteProps": "as-needed",
-    "jsxSingleQuote": false,
+    "semi": true,
     "trailingComma": "none",
     "bracketSpacing": true,
     "bracketSameLine": true,
-    "arrowParens": "avoid",
     "proseWrap": "always",
-    "htmlWhitespaceSensitivity": "css",
     "endOfLine": "lf",
     "plugins": [
       "@trivago/prettier-plugin-sort-imports"
