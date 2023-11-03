@@ -3,7 +3,7 @@ description:
   A GitHub Action which lints PR titles using the CommitLint specification
 runs:
   using: "node20"
-  main: "index.js"
+  main: "dist/index.js"
 branding:
   icon: "activity"
   color: "yellow"
