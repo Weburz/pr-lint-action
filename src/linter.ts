@@ -1,12 +1,8 @@
+import config from "./config";
 import lint from "@commitlint/lint";
 
+// INFO: The logic which validates the PR title
 async function lintPullRequestTitle(title: string) {
-  // TODO: Check if there is a user-defined "commitlint" config file, if not
-  // use "default" configurations as defined by the GH Action itself.
-  const config = {
-    rules: {}
-  };
-
   const result = await lint(title, config.rules);
 
   if (!result.valid) {
