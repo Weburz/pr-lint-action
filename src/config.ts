@@ -1,10 +1,10 @@
-import { QualifiedRules, UserConfig } from "@commitlint/types";
+import { QualifiedRules, RuleConfigSeverity, UserConfig } from "@commitlint/types";
 
 export const rules: QualifiedRules = {
-  "header-max-length": [2, "always", 72],
-  "body-empty": [2, "always"],
+  "header-max-length": [RuleConfigSeverity.Error, "always", 72],
+  "body-empty": [RuleConfigSeverity.Error, "always"],
   "type-enum": [
-    2,
+    RuleConfigSeverity.Error,
     "always",
     [
       "build",
@@ -20,8 +20,8 @@ export const rules: QualifiedRules = {
       "test"
     ]
   ],
-  "type-case": [2, "always", "lowercase"],
-  "type-empty": [2, "always"]
+  "type-case": [RuleConfigSeverity.Error, "always", "lowercase"],
+  "type-empty": [RuleConfigSeverity.Error, "always"]
 };
 
 // INFO: These are the default configurations provided by the Action
