@@ -1,30 +1,30 @@
-import { UserConfig } from "@commitlint/types";
+import { QualifiedRules, RuleConfigSeverity, UserConfig } from "@commitlint/types";
+
+export const rules: QualifiedRules = {
+  "header-max-length": [RuleConfigSeverity.Error, "always", 72],
+  "body-empty": [RuleConfigSeverity.Error, "always"],
+  "type-enum": [
+    RuleConfigSeverity.Error,
+    "always",
+    [
+      "build",
+      "chore",
+      "ci",
+      "docs",
+      "feat",
+      "fix",
+      "perf",
+      "refactor",
+      "revert",
+      "style",
+      "test"
+    ]
+  ],
+  "type-case": [RuleConfigSeverity.Error, "always", "lowercase"],
+  "type-empty": [RuleConfigSeverity.Error, "always"]
+};
 
 // INFO: These are the default configurations provided by the Action
-const config: UserConfig = {
-  rules: {
-    "header-max-length": [2, "always", 72],
-    "body-empty": [2, "always"],
-    "type-enum": [
-      2,
-      "always",
-      [
-        "build",
-        "chore",
-        "ci",
-        "docs",
-        "feat",
-        "fix",
-        "perf",
-        "refactor",
-        "revert",
-        "style",
-        "test"
-      ]
-    ],
-    "type-case": [2, "always", "lowercase"],
-    "type-empty": [2, "always"]
-  }
-};
+const config: UserConfig = { rules };
 
 export default config;
