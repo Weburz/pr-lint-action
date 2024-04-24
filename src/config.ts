@@ -1,4 +1,8 @@
-import { QualifiedRules, RuleConfigSeverity, UserConfig } from "@commitlint/types";
+import {
+  QualifiedRules,
+  RuleConfigSeverity,
+  UserConfig
+} from "@commitlint/types";
 
 export const rules: QualifiedRules = {
   "header-max-length": [RuleConfigSeverity.Error, "always", 72],
